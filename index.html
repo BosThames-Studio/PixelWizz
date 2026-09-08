@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chaos Point · Destek</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; padding:0;
+    background:#0b0c12; color:#e8e9f0;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65; -webkit-text-size-adjust:100%;
+  }
+  .wrap { max-width:640px; margin:0 auto; padding:56px 20px 80px; }
+  .brand { font-size:13px; letter-spacing:2px; font-weight:800; color:#8b8fa3; text-transform:uppercase; }
+  h1 { font-size:32px; margin:10px 0 6px; font-weight:900; letter-spacing:1px; }
+  .tag { color:#6f7386; font-size:14px; letter-spacing:1px; margin-bottom:26px; }
+  .langs { display:flex; gap:8px; margin:18px 0 30px; }
+  .langs button {
+    background:#ffffff0d; border:1px solid #ffffff26; color:#e8e9f0;
+    padding:7px 16px; border-radius:999px; font-size:13px; font-weight:700;
+    cursor:pointer; font-family:inherit;
+  }
+  .langs button.on { background:#5ed0ff; border-color:#5ed0ff; color:#04121a; }
+  .card {
+    background:#ffffff08; border:1px solid #ffffff1a; border-radius:16px;
+    padding:20px; margin:14px 0;
+  }
+  h2 { font-size:16px; margin:0 0 8px; font-weight:800; color:#fff; }
+  p { margin:8px 0; color:#c9cbd8; }
+  a { color:#5ed0ff; }
+  .links { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
+  .links a {
+    display:inline-block; padding:9px 16px; border-radius:10px;
+    background:#ffffff0d; border:1px solid #ffffff26;
+    text-decoration:none; font-size:14px; font-weight:700;
+  }
+  .mail { font-size:17px; font-weight:800; }
+  section { display:none; }
+  section.on { display:block; }
+  footer { margin-top:44px; font-size:12px; color:#6f7386; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Pixel Smith</h1>
+
+  <div class="langs">
+    <button id="b-tr" class="on" onclick="setLang('tr')">Türkçe</button>
+    <button id="b-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- ─────────── TÜRKÇE ─────────── -->
+  <section id="s-tr" class="on">
+    <div class="card">
+      <h2>Destek</h2>
+      <p>Soru, öneri veya sorun bildirimi için bize e-posta gönderebilirsiniz. Genellikle birkaç iş günü içinde yanıt veriyoruz.</p>
+      <p class="mail"><a href="mailto:bosthamesstudio@hotmail.com">bosthamesstudio@hotmail.com</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Sık Sorulanlar</h2>
+      <p><strong>Satın aldığım içerikler kayboldu.</strong> Mağaza ekranındaki “Satın Alımları Geri Yükle” düğmesini kullanın. Satın alımlar Apple hesabınıza bağlıdır.</p>
+      <p><strong>Reklamları kaldırdım ama hâlâ görüyorum.</strong> Yine “Satın Alımları Geri Yükle” düğmesini deneyin; sorun sürerse e-posta ile ulaşın.</p>
+      <p><strong>İlerlemem silindi.</strong> Oyun ilerlemesi cihazınızda saklanır. Uygulamayı silmek verileri de siler.</p>
+    </div>
+
+    <div class="card">
+      <h2>Yasal</h2>
+      <div class="links">
+        <a href="privacy.html">Gizlilik Politikası</a>
+        <a href="terms.html">Kullanım Koşulları</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── ENGLISH ─────────── -->
+  <section id="s-en">
+    <div class="card">
+      <h2>Support</h2>
+      <p>For questions, feedback or issue reports, please email us. We usually reply within a few business days.</p>
+      <p class="mail"><a href="mailto:bosthamesstudio@hotmail.com">bosthamesstudio@hotmail.com</a></p>
+    </div>
+
+    <div class="card">
+      <h2>FAQ</h2>
+      <p><strong>My purchases are missing.</strong> Use the “Restore Purchases” button on the store screen. Purchases are tied to your Apple account.</p>
+      <p><strong>I removed ads but still see them.</strong> Try “Restore Purchases” as well; if the problem persists, contact us by email.</p>
+      <p><strong>My progress was lost.</strong> Game progress is stored on your device. Deleting the app also deletes its data.</p>
+    </div>
+
+    <div class="card">
+      <h2>Legal</h2>
+      <div class="links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Mert Can Çalışkan</footer>
+</div>
+
+<script>
+var TAG={tr:'Birleştir · Patlat · Yüksel', en:'Connect · Burst · Rise'};
+function setLang(l){
+  document.getElementById('s-tr').className = l==='tr'?'on':'';
+  document.getElementById('s-en').className = l==='en'?'on':'';
+  document.getElementById('b-tr').className = l==='tr'?'on':'';
+  document.getElementById('b-en').className = l==='en'?'on':'';
+  document.getElementById('tag').textContent = TAG[l];
+  document.documentElement.lang = l;
+}
+try{ if((navigator.language||'').slice(0,2)!=='tr') setLang('en'); }catch(e){}
+</script>
+</body>
+</html>
