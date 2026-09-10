@@ -1,1 +1,1 @@
-# PixelSmith
+# PixelWizz
